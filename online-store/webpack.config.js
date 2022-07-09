@@ -20,6 +20,10 @@ const baseConfig = {
                 test: /\.s[ac]ss$/i,
                 use: ['style-loader', 'css-loader', 'sass-loader'],
             },
+            {
+                test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+                type: 'asset/inline',
+            },
         ],
     },
     resolve: {
@@ -36,14 +40,14 @@ const baseConfig = {
         }),
         new CleanWebpackPlugin(),
         new EslintPlugin({ extensions: 'ts' }),
-        // new CopyPlugin({
-        //     patterns: [
-        //         {
-        //             from: './src/assets',
-        //             to: './img',
-        //         },
-        //     ],
-        // }),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: './src/assets',
+                    to: './assets',
+                },
+            ],
+        }),
     ],
 };
 

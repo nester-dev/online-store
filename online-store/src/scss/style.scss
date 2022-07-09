@@ -1,3 +1,10 @@
-body {
-  background-color: red;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@400;600&display=swap');
+
+[class*="__container"] {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 195px;
 }
+
+@import "null";
+@import "header";
