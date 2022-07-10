@@ -1,48 +1,101 @@
 <!doctype html>
 <html lang='en'>
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport'
-          content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
-    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-    <title>Online store</title>
+	<meta charset='UTF-8'>
+	<meta name='viewport'
+		  content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+	<meta http-equiv='X-UA-Compatible' content='ie=edge'>
+	<title>Online store</title>
 </head>
 <body>
 <header class='header header__container'>
-    <div class='header__top'>
-        <div class='header__left'>
-            <div class='header__location'>
-                <img class='header__icon' src='./assets/icons/location.svg' alt='location'>
-                <p class='header__text'>Москва</p>
-            </div>
-            <p class='header__waiting'>
-                Среднее время доставки: 🚦 <span>30-50 минут</span>
-            </p>
-        </div>
-        <div class='header__right'>
-            <p class='header__work-time'>
-                Время работы: с 11:00 до 23:00
-            </p>
-            <div class='header__account'>
-                Войти в аккаунт
-            </div>
-        </div>
-    </div>
+	<div class='header__top'>
+		<div class='header__left'>
+			<div class='header__location'>
+				<img class='header__icon' src='./assets/icons/location.svg' alt='location'>
+				<p class='header__text'>Москва</p>
+			</div>
+			<p class='header__waiting'>
+				Среднее время доставки: 🚦 <span>30-50 минут</span>
+			</p>
+		</div>
+		<div class='header__right'>
+			<p class='header__work-time'>
+				Время работы: с 11:00 до 23:00
+			</p>
+			<div class='header__account'>
+				Войти в аккаунт
+			</div>
+		</div>
+	</div>
 
-    <div class='header__bottom bottom-header'>
-        <div class='bottom-header__wrapper'>
-            <img class='bottom-header__logo' src='./assets/icons/logo.svg' alt='logo'>
-            <p class='bottom-header__text'>Куда пицца</p>
-        </div>
-        <div class='bottom-header__cart'>
-            <div class='cart'>
-                <img class='cart__icon' src='./assets/icons/cart.svg' alt='cart'>
-                <div class='cart__cost'>0<span>₽</span></div>
-            </div>
-        </div>
-    </div>
-
+	<div class='header__bottom bottom-header'>
+		<div class='bottom-header__wrapper'>
+			<img class='bottom-header__logo' src='./assets/icons/logo.svg' alt='logo'>
+			<p class='bottom-header__text'>Куда пицца</p>
+		</div>
+		<div class='bottom-header__cart'>
+			<div class='cart'>
+				<img class='cart__icon' src='./assets/icons/cart.svg' alt='cart'>
+				<div class='cart__cost'>0<span>₽</span></div>
+			</div>
+		</div>
+	</div>
 </header>
+
+<section class='menu menu__container'>
+	<a class='menu__item' href='#'>
+		<img src='./assets/icons/fire.svg' alt='fire' class='menu__icon'>
+		<p class='menu__text'>Акции</p>
+	</a>
+	<a class='menu__item' href='#'>
+		<img src='./assets/icons/pizza.svg' alt='pizza' class='menu__icon'>
+		<p class='menu__text'>Пицца</p>
+	</a>
+	<a class='menu__item' href='#'>
+		<img src='./assets/icons/sushi.svg' alt='sushi' class='menu__icon'>
+		<p class='menu__text'>Суши</p>
+	</a>
+	<a class='menu__item' href='#'>
+		<img src='./assets/icons/drink.svg' alt='drinks' class='menu__icon'>
+		<p class='menu__text'>Напитки</p>
+	</a>
+	<a class='menu__item' href='#'>
+		<img src='./assets/icons/snacks.svg' alt='snacks' class='menu__icon'>
+		<p class='menu__text'>Закуски</p>
+	</a>
+	<a class='menu__item' href='#'>
+		<img src='./assets/icons/Combo.svg' alt='combo' class='menu__icon'>
+		<p class='menu__text'>Комбо</p>
+	</a>
+	<a class='menu__item' href='#'>
+		<img src='./assets/icons/dessert.svg' alt='deserts' class='menu__icon'>
+		<p class='menu__text'>Десерты</p>
+	</a>
+	<a class='menu__item' href='#'>
+		<img src='./assets/icons/sauce.svg' alt='sauce' class='menu__icon'>
+		<p class='menu__text'>Соусы</p>
+	</a>
+</section>
+
+<section class='catalog catalog__container'>
+	<div class='catalog__search-form search-form'>
+		<p class='search-form__title'>Поиску по меню</p>
+		<div class='search-form__wrapper'>
+			<img class='search-form__icon' src='./assets/icons/search.svg' alt='search' >
+			<input type='text' class='search-form__input' value='' placeholder='Поиск...'>
+		</div>
+		<div class="dropdown">
+			<button class="dropdown__button">По названию А - Я</button>
+			<div id="myDropdown" class="dropdown__content">
+				<div class='dropdown__text'>По названию Я - А</div>
+				<div class='dropdown__text'>По цене &#129045;</div>
+				<div class='dropdown__text'>По цене &#129047;</div>
+			</div>
+		</div>
+	</div>
+
+</section>
 
 </body>
 </html>
