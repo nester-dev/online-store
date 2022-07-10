@@ -1,59 +1,94 @@
 .catalog {
-  // .catalog__search-form
-  &__search-form {
+  // .catalog__main
+  &__main {
+    display: flex;
+    gap: 15px;
+    margin: 40px 0 0 0;
+  }
+
+  // .catalog__filters
+  &__filters {
+    width: 25%;
+    padding: 10px 10px;
+    border-radius: 10px;
+    background: #FFEEE2;
+    color: #FF7010;
+  }
+
+  // .catalog__filters-head
+  &__filters-head {
+    display: flex;
+    gap: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #191919;
+    &:before {
+      content: url("../assets/icons/filter.svg");
+    }
+  }
+
+  // .catalog__content
+  &__content {
+    width: 75%;
   }
 }
 
-.search-form {
-  display: flex;
-  align-items: center;
-  // .search-form__title
+.filter {
+  // .filter_margin
+  &_margin {
+    margin: 20px 0 0 0;
+  }
+
+  // .filter__title
   &__title {
-    display: inline-block;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 24px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
     color: #191919;
-    margin: 0 32px 0 0;
   }
 
-  // .search-form__wrapper
-  &__wrapper {
-    position: relative;
-    display: flex;
-    flex: 1 1 auto;
-    height: 48px;
-    padding: 1px;
-  }
+  // .filter__element
+  &__element {
+    display: block;
+    margin: 5px 0 0 10px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-image: initial;
+    border-bottom: 1px solid transparent;
 
-  // .search-form__icon
-  &__icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  // .search-form__input
-  &__input {
-    flex: 0 1 80%;
-    padding: 13px 0 13px 40px;
-    outline: none;
-
-    &::placeholder {
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 22px;
-      color: #A5A5A5;
+    // .filter__element_button
+    &_button {
+      padding: 5px;
+      border-radius: 10px;
     }
 
-    &:focus {
-      border-radius: 6px;
+    // .filter__element_button-active
+    &_button-active {
       border: 1px solid #FF7010;
+      background-color: #FF7010;
+      color: #fff;
+    }
+
+    &_active {
+      border-color: #FF7010;
     }
   }
+}
+
+
+.filter-reset {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #FF7010;
+  border-radius: 10px;
+  background-color: #ffffff;
+  text-align: center;
+  cursor: pointer;
 }
 
 .dropdown {
