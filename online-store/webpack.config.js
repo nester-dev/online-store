@@ -46,6 +46,10 @@ const baseConfig = {
                     from: './src/assets',
                     to: './assets',
                 },
+                {
+                    from: './src/data',
+                    to: './data',
+                },
             ],
         }),
     ],

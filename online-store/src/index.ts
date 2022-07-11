@@ -1,3 +1,5 @@
 import './scss/style.scss';
+import { data } from './constants/constants';
+import render from './components/render';
 
-console.log('123');
+render(data);

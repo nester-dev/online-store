@@ -1,0 +1,156 @@
+{
+  "items": [
+    {
+      "type": "pizza",
+      "name": "Маргарита",
+      "tag": null,
+      "composition": ["Cыр моцарелла", "томаты черри", "cоус красный"],
+      "price": "249",
+      "imageName": "margarita"
+    },
+
+    {
+      "type": "pizza",
+      "name": "Пепперони с грибами",
+      "tag": "ХИТ",
+      "composition": ["Cыр моцарелла", "пепперони", "шампиньоны", "cоус красный"],
+      "price": "369",
+      "imageName": "peperoni"
+    },
+
+    {
+      "type": "pizza",
+      "name": "Гавайская",
+      "tag": null,
+      "composition": ["Cыр пармезан", "ветчина", "ананасы", "cоус красный"],
+      "price": "270",
+      "imageName": "hawaii"
+    },
+
+    {
+      "type": "pizza",
+      "name": "Барбекю",
+      "tag": "ХИТ",
+      "composition": ["Cыр чеддер", "цыплёнок", "маринованные огурцы", "cоус барбекю"],
+      "price": "339",
+      "imageName": "barbecue"
+    },
+
+    {
+      "type": "pizza",
+      "name": "Четыре сыра",
+      "tag": null,
+      "composition": ["Cыр чеддер", "сыр пармезан", "сыр моцарелла", "сыр горгонзола"],
+      "price": "399",
+      "imageName": "cheese"
+    },
+
+    {
+      "type": "pizza",
+      "name": "Мексиканская",
+      "tag": "HOT",
+      "composition": ["Cыр пармезан", "цыплёнок", "халапеньо", "красный лук"],
+      "price": "359",
+      "imageName": "mexicano"
+    },
+
+    {
+      "type": "pizza",
+      "name": "Груша",
+      "tag": "ХИТ",
+      "composition": ["Cыр горгонзола", "груша", "сметана", "мёд", "грецкий орех"],
+      "price": "389",
+      "imageName": "pear"
+    },
+
+    {
+      "type": "pizza",
+      "name": "Диабло",
+      "tag": "HOT",
+      "composition": ["Cыр моцарелла", "пепперони", "халапеньо", "лук красный", "чоризо"],
+      "price": "401",
+      "imageName": "diablo"
+    },
+
+    {
+      "type": "pizza",
+      "name": "Карбонара",
+      "tag": null,
+      "composition": ["Cыр пармезан", "бекон", "томаты черри", "яйцо"],
+      "price": "469",
+      "imageName": "carbonara"
+    },
+
+    {
+      "type": "pizza",
+      "name": "Охотничья",
+      "tag": "medium",
+      "composition": ["Cыр чеддер", "охотничьи колбаски", "лук красный", "маринованные огурцы"],
+      "price": "420",
+      "imageName": "hunter"
+    },
+
+    {
+      "type": "pizza",
+      "name": "Деревенская",
+      "tag": "ХИТ",
+      "composition": ["Cыр пармезан", "сыр моцарелла", "шампиньоны", "бекон", "соус белый"],
+      "price": "440",
+      "imageName": "village"
+    },
+
+    {
+      "type": "sushi",
+      "name": "Филадельфия кранч",
+      "tag": null,
+      "composition": ["Семга", "рис", "сыр креметто", "соус унаги", "креветка", "авокадо"],
+      "price": "475",
+      "imageName": "fila-crunch"
+    },
+
+    {
+      "type": "sushi",
+      "name": "Филадельфия крем-брюле",
+      "tag": "ХИТ",
+      "composition": ["Cыр филадельфия", "семга татаки с тростниковым сахаром", "соус унаги"],
+      "price": "395",
+      "imageName": "fila-cream"
+    },
+
+    {
+      "type": "sushi",
+      "name": "Филадельфия спайси ролл",
+      "tag": "HOT",
+      "composition": ["Рис", "нори", "сыр филадельфия", "огурец", "лосось", "соус спайс"],
+      "price": "425",
+      "imageName": "fila-spicy"
+    },
+
+    {
+      "type": "sushi",
+      "name": "Тигр мама",
+      "tag": null,
+      "composition": ["Тигровая креветка", "огурец", "авокадо", "соус Айоли", "рис"],
+      "price": "525",
+      "imageName": "tiger"
+    },
+
+    {
+      "type": "snacks",
+      "name": "Картофель фри 150г",
+      "tag": null,
+      "composition": null,
+      "price": "149",
+      "imageName": "fries"
+    },
+
+    {
+      "type": "snacks",
+      "name": "Крылья барбекю",
+      "tag": null,
+      "composition": null,
+      "price": "250",
+      "imageName": "wings"
+    }
+  ]
+}
