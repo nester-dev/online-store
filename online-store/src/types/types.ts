@@ -10,3 +10,11 @@ export interface CardInfo {
 export interface SourceData {
     items: Array<CardInfo>;
 }
+
+export interface State {
+    sortOrder: string;
+    type?: string;
+    composition?: Array<string>;
+    spicy?: string;
+    search?: string;
+}

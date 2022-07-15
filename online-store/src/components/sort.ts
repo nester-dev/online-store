@@ -1,6 +1,8 @@
 import { SourceData } from '../types/types';
 import { data } from '../constants/constants';
 import render from './render';
+import multipleFilter from './multipleFilter';
+import { currentState } from './currentState';
 
 export function sort(): void {
     const dropdownButton = document.querySelector('.dropdown__button') as HTMLButtonElement;
@@ -11,30 +13,32 @@ export function sort(): void {
         dropdownContent.classList.add('dropdown__content_show');
 
         body.addEventListener('click', handler);
-
-        function handler(event: Event) {
-            const target = event.target as HTMLElement;
-
-            if (target.classList.contains('dropdown__text')) {
-                dropdownButton.innerText = target.innerText;
-                const value = target.getAttribute('data-value') as string;
-                localStorage.setItem('sortOrder', value);
-                dropdownContent.classList.remove('dropdown__content_show');
-
-                let filteredData = data;
-                filteredData = getDataBySortType(value, filteredData);
-                render(filteredData);
-            }
-
-            if (!target.closest('.dropdown__button')) {
-                dropdownContent.classList.remove('dropdown__content_show');
-                body.removeEventListener('click', handler);
-            }
-        }
     });
 }
 
-function getDataBySortType(value: string, data: SourceData): SourceData {
+function handler(event: Event) {
+    const dropdownButton = document.querySelector('.dropdown__button') as HTMLButtonElement;
+    const dropdownContent = document.querySelector('.dropdown__content') as HTMLDivElement;
+    const body = document.body;
+    const target = event.target as HTMLElement;
+
+    if (target.classList.contains('dropdown__text')) {
+        dropdownButton.innerText = target.innerText;
+        currentState.sortOrder = target.getAttribute('data-value') as string;
+        dropdownContent.classList.remove('dropdown__content_show');
+
+        const filteredData = multipleFilter(data, currentState);
+        localStorage.setItem('state', JSON.stringify(currentState));
+        render(filteredData);
+    }
+
+    if (!target.closest('.dropdown__button')) {
+        dropdownContent.classList.remove('dropdown__content_show');
+        body.removeEventListener('click', handler);
+    }
+}
+
+export function getDataBySortType(value: string, data: SourceData): SourceData {
     const sortedData = data;
 
     switch (value) {
