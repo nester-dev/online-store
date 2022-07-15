@@ -1,20 +1,28 @@
-import { SourceData } from '../types/types';
 import createCard from './createCard';
+import multipleFilter from './multipleFilter';
+import { SourceData, State } from '../types/types';
 
-export default function render(data: SourceData): void {
+export default function render(data: SourceData, currentState: State): void {
     const catalogContent = document.querySelector('.catalog__content') as HTMLElement;
     const parent = document.querySelector('.catalog__list') as HTMLElement;
     const fragment = document.createDocumentFragment();
 
-    if (!data.items.length) {
+    const filteredData = multipleFilter(data, currentState);
+
+    if (!filteredData.items.length) {
+        catalogContent.removeChild(parent);
+
         const noCardsText = document.createElement('p');
+        const list = document.createElement('div');
+        list.classList.add('catalog__list');
         noCardsText.classList.add('catalog__no-cards');
         noCardsText.textContent = 'Извините, совпадений не обнаружено.';
 
-        parent.appendChild(noCardsText);
+        list.appendChild(noCardsText);
+        catalogContent.appendChild(list);
     } else {
-        for (let i = 0; i < data.items.length; i++) {
-            const card = createCard(data.items[i]);
+        for (let i = 0; i < filteredData.items.length; i++) {
+            const card = createCard(filteredData.items[i]);
             fragment.appendChild(card);
         }
 

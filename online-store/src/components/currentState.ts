@@ -3,5 +3,5 @@ export const currentState = {
     type: '',
     composition: [],
     spicy: '',
-    search: '',
+    searchTerm: '',
 };

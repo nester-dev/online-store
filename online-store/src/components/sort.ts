@@ -1,8 +1,8 @@
 import { SourceData } from '../types/types';
-import { data } from '../constants/constants';
 import render from './render';
 import multipleFilter from './multipleFilter';
 import { currentState } from './currentState';
+import { data } from '../constants/constants';
 
 export function sort(): void {
     const dropdownButton = document.querySelector('.dropdown__button') as HTMLButtonElement;
@@ -16,7 +16,7 @@ export function sort(): void {
     });
 }
 
-function handler(event: Event) {
+function handler(event: Event): void {
     const dropdownButton = document.querySelector('.dropdown__button') as HTMLButtonElement;
     const dropdownContent = document.querySelector('.dropdown__content') as HTMLDivElement;
     const body = document.body;
@@ -29,7 +29,7 @@ function handler(event: Event) {
 
         const filteredData = multipleFilter(data, currentState);
         localStorage.setItem('state', JSON.stringify(currentState));
-        render(filteredData);
+        render(filteredData, currentState);
     }
 
     if (!target.closest('.dropdown__button')) {

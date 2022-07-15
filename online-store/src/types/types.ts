@@ -16,5 +16,5 @@ export interface State {
     type?: string;
     composition?: Array<string>;
     spicy?: string;
-    search?: string;
+    searchTerm: string;
 }

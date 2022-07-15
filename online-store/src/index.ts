@@ -1,7 +1,10 @@
 import './scss/style.scss';
-import { data } from './constants/constants';
 import render from './components/render';
 import { sort } from './components/sort';
+import { searchFormEvent } from './components/searchForm';
+import { currentState } from './components/currentState';
+import { data } from './constants/constants';
 
-render(data);
+render(data, currentState);
 sort();
+searchFormEvent(data, currentState);
