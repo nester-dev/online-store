@@ -52,6 +52,11 @@
     flex-wrap: wrap;
     gap: 30px 10px;
   }
+
+  // .catalog__no-cards
+  &__no-cards {
+    padding: 15px;
+  }
 }
 
 .filter {
@@ -135,10 +140,13 @@
   // .dropdown__content
   &__content {
     position: absolute;
+    z-index: 1;
     display: none;
     width: 257px;
-    z-index: 1;
+    border-radius: 10px;
+    background: #FFEEE2;
     text-align-last: center;
+    cursor: pointer;
 
     &_show {
       display: block;

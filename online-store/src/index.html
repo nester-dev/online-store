@@ -88,9 +88,10 @@
 		<div class="dropdown">
 			<button class="dropdown__button">По названию А - Я</button>
 			<div id="myDropdown" class="dropdown__content">
-				<div class='dropdown__text'>По названию Я - А</div>
-				<div class='dropdown__text'>По цене &#129045;</div>
-				<div class='dropdown__text'>По цене &#129047;</div>
+				<div class='dropdown__text' data-value='nameAZ'>По названию А - Я</div>
+				<div class='dropdown__text' data-value='nameZA'>По названию Я - А</div>
+				<div class='dropdown__text' data-value='priceUp'>По цене &#129045;</div>
+				<div class='dropdown__text' data-value='priceDown'>По цене &#129047;</div>
 			</div>
 		</div>
 	</div>
@@ -127,22 +128,7 @@
 		</div>
 		<div class='catalog__content'>
 			<h1 class='catalog__content-title'>Меню</h1>
-			<div class='catalog__list'>
-				<div class='card'>
-					<div class='card__tag'>HOT</div>
-					<div class='card__wrapper'>
-						<img class='card__image' src='./assets/card-images/margarita.png' alt='pizza'>
-					</div>
-					<div class='card__description'>
-						<h2 class='card__title'>Маргарита</h2>
-						<p class='card__composition'>Соус красный, сыр моцарелла, томаты черри</p>
-						<div class='card__bottom'>
-							<div class='card__button'>Выбрать</div>
-							<div class='card__price'>249 ₽</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<div class='catalog__list'></div>
 		</div>
 	</div>
 
