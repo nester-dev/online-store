@@ -36,6 +36,13 @@
     width: 80%;
   }
 
+  // .catalog__content
+  &__popular {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+
   // .catalog__content-title
   &__content-title {
     font-family: 'Inter', sans-serif;
@@ -56,106 +63,6 @@
   // .catalog__no-cards
   &__no-cards {
     padding: 15px;
-  }
-}
-
-.filter {
-  // .filter_margin
-  &_margin {
-    margin: 20px 0 0 0;
-  }
-
-  // .filter__title
-  &__title {
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    color: #191919;
-  }
-
-  // .filter__element
-  &__element {
-    display: block;
-    margin: 5px 0 0 10px;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    border-image: initial;
-    border-bottom: 1px solid transparent;
-    padding: 5px;
-    border-radius: 10px;
-
-    // .filter__element-active
-    &_active {
-      border: 1px solid #FF7010;
-      background-color: #FF7010;
-      color: #fff;
-    }
-  }
-}
-
-
-.filter-reset {
-  margin-top: 15px;
-  padding: 10px;
-  border: 1px solid #FF7010;
-  border-radius: 10px;
-  background-color: #ffffff;
-  text-align: center;
-  cursor: pointer;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-  // .dropdown__button
-  &__button {
-    width: 257px;
-    height: 40px;
-    border-radius: 10px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
-    background: #FFEEE2;
-    color: #FF7010;
-    transition: all 0.4s ease 0s;
-
-    &:hover {
-      background-color: #FF7010;
-      color: #FFFFFF;
-    }
-  }
-
-  // .dropdown__content
-  &__content {
-    position: absolute;
-    z-index: 1;
-    display: none;
-    width: 257px;
-    border-radius: 10px;
-    background: #FFEEE2;
-    text-align-last: center;
-    cursor: pointer;
-
-    &_show {
-      display: block;
-    }
-  }
-
-  // .dropdown__text
-  &__text {
-    display: block;
-    padding: 12px 16px;
-    transition: all 0.4s ease 0s;
-
-    &:hover {
-      border-radius: 10px;
-      background-color: #FF7010;
-      color: #FFFFFF;
-    }
   }
 }
 

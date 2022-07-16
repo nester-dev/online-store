@@ -18,4 +18,5 @@ export interface State {
     composition: Array<string>;
     spicy: Array<string>;
     searchTerm: string;
+    popular: boolean;
 }

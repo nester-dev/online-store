@@ -1,0 +1,52 @@
+.filter {
+  // .filter_margin
+  &_margin {
+    margin: 20px 0 0 0;
+  }
+
+  // .filter__title
+  &__title {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #191919;
+  }
+
+  // .filter__element
+  &__element {
+    display: block;
+    margin: 5px 0 0 10px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-image: initial;
+    border-bottom: 1px solid transparent;
+    padding: 5px;
+    border-radius: 10px;
+
+    // .filter__element-active
+    &_active {
+      border: 1px solid #FF7010;
+      background-color: #FF7010;
+      color: #fff;
+    }
+  }
+}
+
+.filter-reset {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #FF7010;
+  border-radius: 10px;
+  background-color: #ffffff;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #FF7010;
+    color: #ffffff;
+    transition: all 0.4s ease 0s;
+  }
+}

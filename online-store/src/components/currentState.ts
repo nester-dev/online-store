@@ -4,4 +4,5 @@ export const currentState = {
     composition: [],
     spicy: [],
     searchTerm: '',
+    popular: false,
 };

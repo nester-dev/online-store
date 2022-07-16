@@ -1,4 +1,4 @@
-import { SourceData, State } from '../types/types';
+import { CardInfo, SourceData, State } from '../types/types';
 import multipleFilter from './multipleFilter';
 import { data } from '../constants/constants';
 import render from './render';
@@ -16,10 +16,15 @@ export default function filtersEvent(currentState: State): void {
             target.classList.contains('filter__element_active')
                 ? setFilterType(filterType, target, currentState)
                 : unsetFilterType(filterType, target, currentState);
-
-            const filteredData = multipleFilter(data, currentState);
-            render(filteredData, currentState);
         }
+
+        if (target.getAttribute('id') === 'checkbox') {
+            currentState.popular = !currentState.popular;
+            localStorage.setItem('state', JSON.stringify(currentState));
+        }
+
+        const filteredData = multipleFilter(data, currentState);
+        render(filteredData, currentState);
     });
 }
 
@@ -67,7 +72,7 @@ export function filterByCategory(data: SourceData, currentState: State) {
     const filteredData = data;
 
     if (currentState.type.length) {
-        filteredData.items = filteredData.items.filter((card) => currentState.type.includes(card.type));
+        filteredData.items = filteredData.items.filter((card: CardInfo) => currentState.type.includes(card.type));
     }
 
     return filteredData;
@@ -77,7 +82,7 @@ export function filterByCheese(data: SourceData, currentState: State): SourceDat
     const filteredData = data;
 
     if (currentState.composition.length) {
-        filteredData.items = filteredData.items.filter((card) => {
+        filteredData.items = filteredData.items.filter((card: CardInfo) => {
             let isContains = true;
 
             if (!card.composition) return false;
@@ -100,7 +105,7 @@ export function filterBySpicy(data: SourceData, currentState: State): SourceData
     const filteredData = data;
 
     if (currentState.spicy.length) {
-        filteredData.items = filteredData.items.filter((card) => {
+        filteredData.items = filteredData.items.filter((card: CardInfo) => {
             let isContains = true;
 
             for (let i = 0; i < currentState.spicy.length; i++) {
@@ -112,6 +117,16 @@ export function filterBySpicy(data: SourceData, currentState: State): SourceData
 
             return isContains;
         });
+    }
+
+    return filteredData;
+}
+
+export function filterByPopular(data: SourceData, currentState: State): SourceData {
+    const filteredData = data;
+
+    if (currentState.popular) {
+        filteredData.items = filteredData.items.filter((card: CardInfo) => card.tag === 'ХИТ');
     }
 
     return filteredData;

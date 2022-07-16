@@ -1,0 +1,39 @@
+.popular {
+  // .popular__title
+  &__title {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #191919;
+  }
+
+  // .popular__checkbox
+  &__checkbox {
+    display: none;
+
+    &:checked {
+      & + .popular__label::after {
+        content: '\2713';
+        position: absolute;
+        top: 2px;
+        left: 4px;
+      }
+    }
+  }
+
+  // .popular__label
+  &__label {
+    position: relative;
+    display: flex;
+    width: 22px;
+    height: 21px;
+    margin: 0 0 0 8px;
+    padding: 0;
+    border: 1px solid #FF7010;
+    border-radius: 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+}
