@@ -19,4 +19,7 @@ export interface State {
     spicy: Array<string>;
     searchTerm: string;
     popular: boolean;
+    cartCount: number;
+    cartTotalPrice: number;
+    cartItems: Array<string>;
 }

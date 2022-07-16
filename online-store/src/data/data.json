@@ -162,12 +162,52 @@
 
     {
       "type": "snacks",
-      "name": "Крылья барбекю",
+      "name": "Крылья барбекю 400гр",
       "tag": null,
       "composition": null,
       "price": "250",
       "spicy": "none",
       "imageName": "wings"
+    },
+
+    {
+      "type": "snacks",
+      "name": "Наггетсы 400гр",
+      "tag": null,
+      "composition": null,
+      "price": "310",
+      "spicy": "none",
+      "imageName": "nuggets"
+    },
+
+    {
+      "type": "drinks",
+      "name": "Pepsi 0,25л",
+      "tag": "ХИТ",
+      "composition": null,
+      "price": "150",
+      "spicy": "none",
+      "imageName": "pepsi"
+    },
+
+    {
+      "type": "drinks",
+      "name": "Mirinda 0,25л",
+      "tag": null,
+      "composition": null,
+      "price": "160",
+      "spicy": "none",
+      "imageName": "mirinda"
+    },
+
+    {
+      "type": "drinks",
+      "name": "Adrenalin GAME-FUEL 0,3л",
+      "tag": null,
+      "composition": null,
+      "price": "200",
+      "spicy": "none",
+      "imageName": "adrenalin"
     }
   ]
 }

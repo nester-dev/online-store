@@ -1,6 +1,7 @@
 import createCard from './createCard';
 import multipleFilter from './multipleFilter';
 import { SourceData, State } from '../types/types';
+import cardsEvent from './cardsEvent';
 
 export default function render(data: SourceData, currentState: State): void {
     const catalogContent = document.querySelector('.catalog__content') as HTMLElement;
@@ -23,6 +24,15 @@ export default function render(data: SourceData, currentState: State): void {
     } else {
         for (let i = 0; i < filteredData.items.length; i++) {
             const card = createCard(filteredData.items[i]);
+            const cardName = card.querySelector('.card__title') as HTMLElement;
+
+            if (currentState.cartItems.includes(cardName.innerText)) {
+                card.classList.add('card_selected');
+                const cardButton = card.querySelector('.card__button') as HTMLElement;
+                cardButton.classList.add('card__button_active');
+                cardButton.innerText = 'Добавлено!';
+            }
+
             fragment.appendChild(card);
         }
 
@@ -33,5 +43,7 @@ export default function render(data: SourceData, currentState: State): void {
             list.appendChild(fragment);
             catalogContent.appendChild(list);
         }
+
+        cardsEvent(currentState);
     }
 }

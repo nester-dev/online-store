@@ -36,8 +36,11 @@
 		</div>
 		<div class='bottom-header__cart'>
 			<div class='cart'>
-				<img class='cart__icon' src='./assets/icons/cart.svg' alt='cart'>
-				<div class='cart__cost'>0<span>₽</span></div>
+					<div class='cart__wrapper'>
+						<img class='cart__icon' src='./assets/icons/cart.svg' alt='cart'>
+						<p class='cart__total'>0</p>
+					</div>
+				<div class='cart__cost'>0₽</div>
 			</div>
 		</div>
 	</div>
@@ -104,6 +107,7 @@
 				<button class='filter__element' data-value='pizza'>Пиццы</button>
 				<button class='filter__element' data-value='sushi'>Суши</button>
 				<button class='filter__element' data-value='snacks'>Закуски</button>
+				<button class='filter__element' data-value='drinks'>Напитки</button>
 			</div>
 
 			<div id='cheese' class='filter filter_margin'>
@@ -137,6 +141,15 @@
 		<div class='catalog__content'>
 			<h1 class='catalog__content-title'>Меню</h1>
 			<div class='catalog__list'></div>
+		</div>
+	</div>
+
+	<div class="popup">
+		<div class="popup__body">
+			<div class="popup__content">
+				<a href="#" class="popup__close"></a>
+				<div class="popup__text">Вы превысили лимит товаров!</div>
+			</div>
 		</div>
 	</div>
 

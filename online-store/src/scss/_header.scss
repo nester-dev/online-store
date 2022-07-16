@@ -103,6 +103,33 @@
   line-height: 22px;
   color: #FFFFFF;
 
+  // .cart__icon
+  &__icon {
+
+  }
+
+  // .cart__icon
+  &__wrapper {
+    position: relative;
+
+  }
+
+  // .cart__total
+  &__total {
+    position: absolute;
+    right: -6px;
+    top: -5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 17px;
+    height: 17px;
+    padding: 5px;
+    border-radius: 100%;
+    background-color: #ef2b51;
+    font-size: 11px;
+  }
+
   // .cart__cost
   &__cost {
   }
