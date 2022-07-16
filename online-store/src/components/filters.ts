@@ -37,7 +37,7 @@ function setFilterType(filterType: string, target: HTMLElement, currentState: St
             break;
 
         case 'spicy':
-            currentState.spicy.push(target.getAttribute('data-value') as string);
+            currentState.spicy.push(dataAttr);
             localStorage.setItem('state', JSON.stringify(currentState));
             break;
     }
@@ -52,12 +52,12 @@ function unsetFilterType(filterType: string, target: HTMLElement, currentState: 
             break;
 
         case 'cheese':
-            currentState.composition.splice(currentState.type.indexOf(target.innerText), 1);
+            currentState.composition.splice(currentState.composition.indexOf(target.innerText), 1);
             localStorage.setItem('state', JSON.stringify(currentState));
             break;
 
         case 'spicy':
-            currentState.spicy.splice(currentState.type.indexOf(dataAttr), 1);
+            currentState.spicy.splice(currentState.spicy.indexOf(dataAttr), 1);
             localStorage.setItem('state', JSON.stringify(currentState));
             break;
     }
@@ -84,6 +84,27 @@ export function filterByCheese(data: SourceData, currentState: State): SourceDat
 
             for (let i = 0; i < currentState.composition.length; i++) {
                 if (-1 === card.composition.indexOf(`сыр ${currentState.composition[i]}`)) {
+                    isContains = false;
+                    break;
+                }
+            }
+
+            return isContains;
+        });
+    }
+
+    return filteredData;
+}
+
+export function filterBySpicy(data: SourceData, currentState: State): SourceData {
+    const filteredData = data;
+
+    if (currentState.spicy.length) {
+        filteredData.items = filteredData.items.filter((card) => {
+            let isContains = true;
+
+            for (let i = 0; i < currentState.spicy.length; i++) {
+                if (-1 === currentState.spicy.indexOf(card.spicy)) {
                     isContains = false;
                     break;
                 }

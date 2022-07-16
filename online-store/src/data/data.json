@@ -6,6 +6,7 @@
       "tag": null,
       "composition": ["сыр моцарелла", "томаты черри", "cоус красный"],
       "price": "249",
+      "spicy": "none",
       "imageName": "margarita"
     },
 
@@ -15,6 +16,7 @@
       "tag": "ХИТ",
       "composition": ["сыр моцарелла", "пепперони", "шампиньоны", "cоус красный"],
       "price": "369",
+      "spicy": "none",
       "imageName": "peperoni"
     },
 
@@ -24,6 +26,7 @@
       "tag": null,
       "composition": ["сыр пармезан", "ветчина", "ананасы", "cоус красный"],
       "price": "270",
+      "spicy": "none",
       "imageName": "hawaii"
     },
 
@@ -33,6 +36,7 @@
       "tag": "ХИТ",
       "composition": ["сыр чеддер", "цыплёнок", "маринованные огурцы", "cоус барбекю"],
       "price": "339",
+      "spicy": "none",
       "imageName": "barbecue"
     },
 
@@ -42,6 +46,7 @@
       "tag": null,
       "composition": ["сыр чеддер", "сыр пармезан", "сыр моцарелла", "сыр горгонзола"],
       "price": "399",
+      "spicy": "none",
       "imageName": "cheese"
     },
 
@@ -51,6 +56,7 @@
       "tag": "HOT",
       "composition": ["сыр пармезан", "цыплёнок", "халапеньо", "красный лук"],
       "price": "359",
+      "spicy": "hot",
       "imageName": "mexicano"
     },
 
@@ -60,6 +66,7 @@
       "tag": "ХИТ",
       "composition": ["сыр горгонзола", "груша", "сметана", "мёд", "грецкий орех"],
       "price": "389",
+      "spicy": "none",
       "imageName": "pear"
     },
 
@@ -69,6 +76,7 @@
       "tag": "HOT",
       "composition": ["сыр моцарелла", "пепперони", "халапеньо", "лук красный", "чоризо"],
       "price": "401",
+      "spicy": "hot",
       "imageName": "diablo"
     },
 
@@ -78,6 +86,7 @@
       "tag": null,
       "composition": ["сыр пармезан", "бекон", "томаты черри", "яйцо"],
       "price": "469",
+      "spicy": "none",
       "imageName": "carbonara"
     },
 
@@ -87,6 +96,7 @@
       "tag": "medium",
       "composition": ["сыр чеддер", "охотничьи колбаски", "лук красный", "маринованные огурцы"],
       "price": "420",
+      "spicy": "medium",
       "imageName": "hunter"
     },
 
@@ -96,6 +106,7 @@
       "tag": "ХИТ",
       "composition": ["сыр пармезан", "сыр моцарелла", "шампиньоны", "бекон", "соус белый"],
       "price": "440",
+      "spicy": "none",
       "imageName": "village"
     },
 
@@ -105,6 +116,7 @@
       "tag": null,
       "composition": ["семга", "рис", "сыр креметто", "соус унаги", "креветка", "авокадо"],
       "price": "475",
+      "spicy": "none",
       "imageName": "fila-crunch"
     },
 
@@ -114,6 +126,7 @@
       "tag": "ХИТ",
       "composition": ["сыр филадельфия", "семга татаки с тростниковым сахаром", "соус унаги"],
       "price": "395",
+      "spicy": "none",
       "imageName": "fila-cream"
     },
 
@@ -123,6 +136,7 @@
       "tag": "HOT",
       "composition": ["рис", "нори", "сыр филадельфия", "огурец", "лосось", "соус спайс"],
       "price": "425",
+      "spicy": "hot",
       "imageName": "fila-spicy"
     },
 
@@ -132,6 +146,7 @@
       "tag": null,
       "composition": ["тигровая креветка", "огурец", "авокадо", "соус Айоли", "рис"],
       "price": "525",
+      "spicy": "none",
       "imageName": "tiger"
     },
 
@@ -141,6 +156,7 @@
       "tag": null,
       "composition": null,
       "price": "149",
+      "spicy": "none",
       "imageName": "fries"
     },
 
@@ -150,6 +166,7 @@
       "tag": null,
       "composition": null,
       "price": "250",
+      "spicy": "none",
       "imageName": "wings"
     }
   ]

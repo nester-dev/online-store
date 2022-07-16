@@ -4,6 +4,7 @@ export interface CardInfo {
     tag?: string;
     composition?: Array<string>;
     price: string;
+    spicy: string;
     imageName: string;
 }
 
