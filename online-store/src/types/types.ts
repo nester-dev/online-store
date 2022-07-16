@@ -13,8 +13,8 @@ export interface SourceData {
 
 export interface State {
     sortOrder: string;
-    type?: string;
-    composition?: Array<string>;
-    spicy?: string;
+    type: Array<string>;
+    composition: Array<string>;
+    spicy: Array<string>;
     searchTerm: string;
 }

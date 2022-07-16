@@ -84,22 +84,14 @@
     border-left: none;
     border-image: initial;
     border-bottom: 1px solid transparent;
+    padding: 5px;
+    border-radius: 10px;
 
-    // .filter__element_button
-    &_button {
-      padding: 5px;
-      border-radius: 10px;
-    }
-
-    // .filter__element_button-active
-    &_button-active {
+    // .filter__element-active
+    &_active {
       border: 1px solid #FF7010;
       background-color: #FF7010;
       color: #fff;
-    }
-
-    &_active {
-      border-color: #FF7010;
     }
   }
 }

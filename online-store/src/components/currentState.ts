@@ -1,7 +1,7 @@
 export const currentState = {
     sortOrder: 'nameAZ',
-    type: '',
+    type: [],
     composition: [],
-    spicy: '',
+    spicy: [],
     searchTerm: '',
 };
