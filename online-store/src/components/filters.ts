@@ -72,3 +72,26 @@ export function filterByCategory(data: SourceData, currentState: State) {
 
     return filteredData;
 }
+
+export function filterByCheese(data: SourceData, currentState: State): SourceData {
+    const filteredData = data;
+
+    if (currentState.composition.length) {
+        filteredData.items = filteredData.items.filter((card) => {
+            let isContains = true;
+
+            if (!card.composition) return false;
+
+            for (let i = 0; i < currentState.composition.length; i++) {
+                if (-1 === card.composition.indexOf(`сыр ${currentState.composition[i]}`)) {
+                    isContains = false;
+                    break;
+                }
+            }
+
+            return isContains;
+        });
+    }
+
+    return filteredData;
+}
