@@ -10,4 +10,6 @@ export const currentState = {
     cartItems: [],
     minPrice: '',
     maxPrice: '',
+    minWeight: '',
+    maxWeight: '',
 };

@@ -2,162 +2,178 @@
   "items": [
     {
       "type": "pizza",
-      "name": "Маргарита",
+      "name": "Маргарита 500гр",
       "tag": null,
       "composition": ["сыр моцарелла", "томаты черри", "cоус красный"],
       "price": "249",
       "spicy": "none",
-      "imageName": "margarita"
+      "imageName": "margarita",
+      "weight": "500"
     },
 
     {
       "type": "pizza",
-      "name": "Пепперони с грибами",
+      "name": "Пепперони с грибами 600гр",
       "tag": "ХИТ",
       "composition": ["сыр моцарелла", "пепперони", "шампиньоны", "cоус красный"],
       "price": "369",
       "spicy": "none",
-      "imageName": "peperoni"
+      "imageName": "peperoni",
+      "weight": "600"
     },
 
     {
       "type": "pizza",
-      "name": "Гавайская",
+      "name": "Гавайская 630гр",
       "tag": null,
       "composition": ["сыр пармезан", "ветчина", "ананасы", "cоус красный"],
       "price": "270",
       "spicy": "none",
-      "imageName": "hawaii"
+      "imageName": "hawaii",
+      "weight": "630"
     },
 
     {
       "type": "pizza",
-      "name": "Барбекю",
+      "name": "Барбекю 450гр",
       "tag": "ХИТ",
       "composition": ["сыр чеддер", "цыплёнок", "маринованные огурцы", "cоус барбекю"],
       "price": "339",
       "spicy": "none",
-      "imageName": "barbecue"
+      "imageName": "barbecue",
+      "weight": "450"
     },
 
     {
       "type": "pizza",
-      "name": "Четыре сыра",
+      "name": "Четыре сыра 470гр",
       "tag": null,
       "composition": ["сыр чеддер", "сыр пармезан", "сыр моцарелла", "сыр горгонзола"],
       "price": "399",
       "spicy": "none",
-      "imageName": "cheese"
+      "imageName": "cheese",
+      "weight": "470"
     },
 
     {
       "type": "pizza",
-      "name": "Мексиканская",
+      "name": "Мексиканская 550гр",
       "tag": "HOT",
       "composition": ["сыр пармезан", "цыплёнок", "халапеньо", "красный лук"],
       "price": "359",
       "spicy": "hot",
-      "imageName": "mexicano"
+      "imageName": "mexicano",
+      "weight": "550"
     },
 
     {
       "type": "pizza",
-      "name": "Груша",
+      "name": "Груша 350гр",
       "tag": "ХИТ",
       "composition": ["сыр горгонзола", "груша", "сметана", "мёд", "грецкий орех"],
       "price": "389",
       "spicy": "none",
-      "imageName": "pear"
+      "imageName": "pear",
+      "weight": "350"
     },
 
     {
       "type": "pizza",
-      "name": "Диабло",
+      "name": "Диабло 470гр",
       "tag": "HOT",
       "composition": ["сыр моцарелла", "пепперони", "халапеньо", "лук красный", "чоризо"],
       "price": "401",
       "spicy": "hot",
-      "imageName": "diablo"
+      "imageName": "diablo",
+      "weight": "470"
     },
 
     {
       "type": "pizza",
-      "name": "Карбонара",
+      "name": "Карбонара 530гр",
       "tag": null,
       "composition": ["сыр пармезан", "бекон", "томаты черри", "яйцо"],
       "price": "469",
       "spicy": "none",
-      "imageName": "carbonara"
+      "imageName": "carbonara",
+      "weight": "530"
     },
 
     {
       "type": "pizza",
-      "name": "Охотничья",
+      "name": "Охотничья 320гр",
       "tag": "medium",
       "composition": ["сыр чеддер", "охотничьи колбаски", "лук красный", "маринованные огурцы"],
       "price": "420",
       "spicy": "medium",
-      "imageName": "hunter"
+      "imageName": "hunter",
+      "weight": "320"
     },
 
     {
       "type": "pizza",
-      "name": "Деревенская",
+      "name": "Деревенская 390гр",
       "tag": "ХИТ",
       "composition": ["сыр пармезан", "сыр моцарелла", "шампиньоны", "бекон", "соус белый"],
       "price": "440",
       "spicy": "none",
-      "imageName": "village"
+      "imageName": "village",
+      "weight": "390"
     },
 
     {
       "type": "sushi",
-      "name": "Филадельфия кранч",
+      "name": "Филадельфия кранч 290гр (8шт)",
       "tag": null,
       "composition": ["семга", "рис", "сыр креметто", "соус унаги", "креветка", "авокадо"],
       "price": "475",
       "spicy": "none",
-      "imageName": "fila-crunch"
+      "imageName": "fila-crunch",
+      "weight": "290"
     },
 
     {
       "type": "sushi",
-      "name": "Филадельфия крем-брюле",
+      "name": "Филадельфия крем-брюле 270гр (8шт)",
       "tag": "ХИТ",
       "composition": ["сыр филадельфия", "семга татаки с тростниковым сахаром", "соус унаги"],
       "price": "395",
       "spicy": "none",
-      "imageName": "fila-cream"
+      "imageName": "fila-cream",
+      "weight": "270"
     },
 
     {
       "type": "sushi",
-      "name": "Филадельфия спайси ролл",
+      "name": "Филадельфия спайси ролл 250гр (8шт)",
       "tag": "HOT",
       "composition": ["рис", "нори", "сыр филадельфия", "огурец", "лосось", "соус спайс"],
       "price": "425",
       "spicy": "hot",
-      "imageName": "fila-spicy"
+      "imageName": "fila-spicy",
+      "weight": "250"
     },
 
     {
       "type": "sushi",
-      "name": "Тигр мама",
+      "name": "Тигр мама 280гр (8шт)",
       "tag": null,
       "composition": ["тигровая креветка", "огурец", "авокадо", "соус Айоли", "рис"],
       "price": "525",
       "spicy": "none",
-      "imageName": "tiger"
+      "imageName": "tiger",
+      "weight": "280"
     },
 
     {
       "type": "snacks",
-      "name": "Картофель фри 150г",
+      "name": "Картофель фри 200гр",
       "tag": null,
       "composition": null,
       "price": "149",
       "spicy": "none",
-      "imageName": "fries"
+      "imageName": "fries",
+      "weight": "200"
     },
 
     {
@@ -167,17 +183,19 @@
       "composition": null,
       "price": "250",
       "spicy": "none",
-      "imageName": "wings"
+      "imageName": "wings",
+      "weight": "400"
     },
 
     {
       "type": "snacks",
-      "name": "Наггетсы 400гр",
+      "name": "Наггетсы 370гр",
       "tag": null,
       "composition": null,
       "price": "310",
       "spicy": "none",
-      "imageName": "nuggets"
+      "imageName": "nuggets",
+      "weight": "370"
     },
 
     {
@@ -187,7 +205,8 @@
       "composition": null,
       "price": "150",
       "spicy": "none",
-      "imageName": "pepsi"
+      "imageName": "pepsi",
+      "weight": "250"
     },
 
     {
@@ -197,7 +216,8 @@
       "composition": null,
       "price": "160",
       "spicy": "none",
-      "imageName": "mirinda"
+      "imageName": "mirinda",
+      "weight": "250"
     },
 
     {
@@ -207,7 +227,8 @@
       "composition": null,
       "price": "200",
       "spicy": "none",
-      "imageName": "adrenalin"
+      "imageName": "adrenalin",
+      "weight": "300"
     }
   ]
 }

@@ -6,6 +6,7 @@ export interface CardInfo {
     price: string;
     spicy: string;
     imageName: string;
+    weight: string;
 }
 
 export interface SourceData {
@@ -24,4 +25,6 @@ export interface State {
     cartItems: Array<string>;
     minPrice: string;
     maxPrice: string;
+    minWeight: string;
+    maxWeight: string;
 }
