@@ -29,6 +29,39 @@
     transform: translateY(-50%);
   }
 
+  &__close {
+    display: none;
+    position: absolute;
+    top: 11px;
+    right: 21%;
+    width: 29px;
+    height: 29px;
+    cursor: pointer;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 11px;
+      left: 6px;
+      width: 12px;
+      height: 2px;
+      border-radius: 3px;
+      background: #292929;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+    &-active {
+      display: block;
+    }
+  }
+
   // .search-form__input
   &__input {
     flex: 0 1 80%;
