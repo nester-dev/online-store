@@ -36,10 +36,10 @@
 		</div>
 		<div class='bottom-header__cart'>
 			<div class='cart'>
-					<div class='cart__wrapper'>
-						<img class='cart__icon' src='./assets/icons/cart.svg' alt='cart'>
-						<p class='cart__total'>0</p>
-					</div>
+				<div class='cart__wrapper'>
+					<img class='cart__icon' src='./assets/icons/cart.svg' alt='cart'>
+					<p class='cart__total'>0</p>
+				</div>
 				<div class='cart__cost'>0₽</div>
 			</div>
 		</div>
@@ -85,12 +85,12 @@
 	<div class='catalog__search-form search-form'>
 		<p class='search-form__title'>Поиску по меню</p>
 		<div class='search-form__wrapper'>
-			<img class='search-form__icon' src='./assets/icons/search.svg' alt='search' >
+			<img class='search-form__icon' src='./assets/icons/search.svg' alt='search'>
 			<input type='text' class='search-form__input' value='' placeholder='Поиск...'>
 		</div>
-		<div class="dropdown">
-			<button class="dropdown__button">По названию А - Я</button>
-			<div id="myDropdown" class="dropdown__content">
+		<div class='dropdown'>
+			<button class='dropdown__button'>По названию А - Я</button>
+			<div id='myDropdown' class='dropdown__content'>
 				<div class='dropdown__text' data-value='nameAZ'>По названию А - Я</div>
 				<div class='dropdown__text' data-value='nameZA'>По названию Я - А</div>
 				<div class='dropdown__text' data-value='priceUp'>По цене &#129045;</div>
@@ -144,16 +144,26 @@
 		</div>
 	</div>
 
-	<div class="popup">
-		<div class="popup__body">
-			<div class="popup__content">
-				<a href="#" class="popup__close"></a>
-				<div class="popup__text">Вы превысили лимит товаров!</div>
+	<div class='popup'>
+		<div class='popup__body'>
+			<div class='popup__content'>
+				<a href='#' class='popup__close'></a>
+				<div class='popup__text'>Вы превысили лимит товаров!</div>
 			</div>
 		</div>
 	</div>
 
 </section>
+
+<footer class='footer footer__container'>
+	<a class='footer__wrapper' href='https://github.com/nester-dev' target='_blank'>
+		<div class='footer__github' ><img class='footer__image'
+			src='./assets/footer/github.svg' alt='github'></div>
+		<p class='footer__text'>nester-dev © 2022</p>
+	</a>
+	<a class='footer__rsschool' href='https://rs.school/js/' target='_blank'><img class='footer__image'
+			src='./assets/footer/rsschool.svg' alt='RS School'></a>
+</footer>
 
 </body>
 </html>
