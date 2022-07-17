@@ -8,4 +8,6 @@ export const currentState = {
     cartCount: 0,
     cartTotalPrice: 0,
     cartItems: [],
+    minPrice: '',
+    maxPrice: '',
 };

@@ -10,7 +10,7 @@
     "strictPropertyInitialization": true,
     "strictFunctionTypes": true,
     "noImplicitThis": true,
-    "strictBindCallApply": true
+    "moduleResolution": "node"
   },
   "exclude": [
     "node_modules"

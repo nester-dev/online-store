@@ -22,4 +22,6 @@ export interface State {
     cartCount: number;
     cartTotalPrice: number;
     cartItems: Array<string>;
+    minPrice: string;
+    maxPrice: string;
 }

@@ -10,12 +10,13 @@
   overflow: hidden;
   touch-action: none;
 }
-
 @import "null";
 @import "header";
 @import "search-form";
 @import "dropdown";
 @import "filter";
+@import 'nouislider/dist/nouislider.css';
+@import "price-slider";
 @import "popular";
 @import "catalog";
 @import "card";

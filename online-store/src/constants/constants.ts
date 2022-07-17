@@ -6,3 +6,6 @@ export const LOCKPADDINGVALUE = window.innerWidth - BODY.offsetWidth + 'px';
 export const POPUP = document.querySelector('.popup') as HTMLElement;
 export const POPUP_CLOSE = document.querySelector('.popup__close') as HTMLElement;
 export const MAX_CART_COUNT = 20;
+export const INPUT1 = document.getElementById('input-1') as HTMLInputElement;
+export const INPUT2 = document.getElementById('input-2') as HTMLInputElement;
+export const INPUTS = [INPUT1, INPUT2];
