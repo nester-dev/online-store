@@ -2,6 +2,7 @@ import { CardInfo, SourceData, State } from '../types/types';
 import multipleFilter from './multipleFilter';
 import { data } from '../constants/constants';
 import render from './render';
+import filtersReset from './filtersReset';
 
 export default function filtersEvent(currentState: State): void {
     const catalogFilters = document.querySelector('.catalog__filters') as HTMLDivElement;
@@ -21,6 +22,10 @@ export default function filtersEvent(currentState: State): void {
         if (target.getAttribute('id') === 'checkbox') {
             currentState.popular = !currentState.popular;
             localStorage.setItem('state', JSON.stringify(currentState));
+        }
+
+        if (target.classList.contains('filter-reset')) {
+            filtersReset(currentState);
         }
 
         const filteredData = multipleFilter(data, currentState);

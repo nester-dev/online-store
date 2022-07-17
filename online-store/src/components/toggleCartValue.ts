@@ -16,10 +16,12 @@ export default function toggleCartValue(target: HTMLElement, currentState: State
             cardButton.classList.add('card__button_active');
             cardButton.innerText = 'Добавлено!';
 
-            cartPrice.innerText = `${+currentTotalPrice + +price}₽`;
+            const newPrice = +currentTotalPrice + +price;
+            cartPrice.innerText = `${newPrice}₽`;
             cartTotal.innerText = (+cartTotal.innerText + 1).toString();
             currentState.cartItems.push(cardName.innerText);
             currentState.cartCount++;
+            currentState.cartTotalPrice = newPrice;
             localStorage.setItem('state', JSON.stringify(currentState));
         } else {
             popup();
@@ -29,11 +31,13 @@ export default function toggleCartValue(target: HTMLElement, currentState: State
         cardButton.classList.remove('card__button_active');
         cardButton.innerText = 'Выбрать';
 
-        cartPrice.innerText = `${+currentTotalPrice - +price}₽`;
+        const newPrice = +currentTotalPrice - +price;
+        cartPrice.innerText = `${newPrice}₽`;
         cartTotal.innerText = (+cartTotal.innerText - 1).toString();
         const index = currentState.cartItems.indexOf(cardName.innerText);
         currentState.cartItems.splice(index, 1);
         currentState.cartCount--;
+        currentState.cartTotalPrice = newPrice;
         localStorage.setItem('state', JSON.stringify(currentState));
     }
 }
