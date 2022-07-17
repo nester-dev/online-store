@@ -4,6 +4,8 @@ import multipleFilter from './multipleFilter';
 
 export function searchFormEvent(data: SourceData, currentState: State) {
     const searchForm = document.querySelector('.search-form__input') as HTMLInputElement;
+    searchForm.focus();
+    searchForm.select();
 
     searchForm.addEventListener('input', (event: Event) => {
         const value = (event.target as HTMLInputElement).value.trim();

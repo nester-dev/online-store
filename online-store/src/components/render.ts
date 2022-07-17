@@ -2,6 +2,7 @@ import createCard from './createCard';
 import multipleFilter from './multipleFilter';
 import { SourceData, State } from '../types/types';
 import cardsEvent from './cardsEvent';
+import { DROPDOWNBUTTON } from '../constants/constants';
 
 export default function render(data: SourceData, currentState: State): void {
     const catalogContent = document.querySelector('.catalog__content') as HTMLElement;
@@ -31,6 +32,12 @@ export default function render(data: SourceData, currentState: State): void {
                 const cardButton = card.querySelector('.card__button') as HTMLElement;
                 cardButton.classList.add('card__button_active');
                 cardButton.innerText = 'Добавлено!';
+            }
+
+            if (currentState) {
+                DROPDOWNBUTTON.innerText = (document.querySelector(
+                    `[data-value=${currentState.sortOrder}]`
+                ) as HTMLElement).innerText as string;
             }
 
             fragment.appendChild(card);

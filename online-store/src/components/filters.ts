@@ -3,6 +3,7 @@ import multipleFilter from './multipleFilter';
 import { data } from '../constants/constants';
 import render from './render';
 import filtersReset from './filtersReset';
+import settingsReset from './settingsReset';
 
 export default function filtersEvent(currentState: State): void {
     const catalogFilters = document.querySelector('.catalog__filters') as HTMLDivElement;
@@ -45,8 +46,13 @@ export default function filtersEvent(currentState: State): void {
             localStorage.setItem('state', JSON.stringify(currentState));
         }
 
-        if (target.classList.contains('filter-reset')) {
+        if (target.classList.contains('reset-filter')) {
             filtersReset(currentState);
+        }
+
+        if (target.classList.contains('reset-settings')) {
+            settingsReset(currentState);
+            render(data, currentState);
         }
 
         const filteredData = multipleFilter(data, currentState);
