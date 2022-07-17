@@ -7,6 +7,27 @@ import filtersReset from './filtersReset';
 export default function filtersEvent(currentState: State): void {
     const catalogFilters = document.querySelector('.catalog__filters') as HTMLDivElement;
 
+    if (currentState.type.length) {
+        for (let i = 0; i < currentState.type.length; i++) {
+            const target = document.querySelector(`[data-value=${currentState.type[i]}]`) as HTMLElement;
+            target.classList.add('filter__element_active');
+        }
+    }
+
+    if (currentState.composition.length) {
+        for (let i = 0; i < currentState.composition.length; i++) {
+            const target = document.querySelector(`[data-value=${currentState.composition[i]}]`) as HTMLElement;
+            target.classList.add('filter__element_active');
+        }
+    }
+
+    if (currentState.spicy.length) {
+        for (let i = 0; i < currentState.spicy.length; i++) {
+            const target = document.querySelector(`[data-value=${currentState.spicy[i]}]`) as HTMLElement;
+            target.classList.add('filter__element_active');
+        }
+    }
+
     catalogFilters.addEventListener('click', (event: Event) => {
         const target = event.target as HTMLElement;
 

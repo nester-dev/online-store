@@ -1,13 +1,17 @@
-import { SourceData } from '../types/types';
+import { SourceData, State } from '../types/types';
 import render from './render';
 import multipleFilter from './multipleFilter';
-import { currentState } from './currentState';
 import { data } from '../constants/constants';
 
-export function sort(): void {
+export function sort(currentState: State): void {
     const dropdownButton = document.querySelector('.dropdown__button') as HTMLButtonElement;
     const dropdownContent = document.querySelector('.dropdown__content') as HTMLDivElement;
     const body = document.body;
+
+    if (currentState) {
+        dropdownButton.innerText = (document.querySelector(`[data-value=${currentState.sortOrder}]`) as HTMLElement)
+            .innerText as string;
+    }
 
     dropdownButton.addEventListener('click', () => {
         dropdownContent.classList.add('dropdown__content_show');
@@ -17,6 +21,7 @@ export function sort(): void {
 }
 
 function handler(event: Event): void {
+    const currentState: State = JSON.parse(localStorage.getItem('state') as string);
     const dropdownButton = document.querySelector('.dropdown__button') as HTMLButtonElement;
     const dropdownContent = document.querySelector('.dropdown__content') as HTMLDivElement;
     const body = document.body;

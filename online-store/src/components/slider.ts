@@ -6,24 +6,35 @@ import render from './render';
 
 export function priceSlider(data: SourceData, currentState: State) {
     const priceSlider = document.getElementById('filter-price') as noUiSlider.target;
-    const minPrice = getMin(data, 'price');
-    const maxPrice = getMax(data, 'price');
 
-    INPUT1.setAttribute('min', minPrice);
+    const minStartPrice = getMin(data, 'price');
+    const maxStartPrice = getMax(data, 'price');
+    let minPrice;
+    let maxPrice;
+
+    if (currentState.minPrice && currentState.maxPrice) {
+        minPrice = currentState.minPrice;
+        maxPrice = currentState.maxPrice;
+    } else {
+        minPrice = minStartPrice;
+        maxPrice = maxStartPrice;
+    }
+
+    INPUT1.setAttribute('min', minStartPrice);
     INPUT1.setAttribute('placeholder', minPrice);
-    INPUT2.setAttribute('min', minPrice);
+    INPUT2.setAttribute('min', minStartPrice);
 
-    INPUT1.setAttribute('max', maxPrice);
+    INPUT1.setAttribute('max', maxStartPrice);
     INPUT2.setAttribute('placeholder', maxPrice);
-    INPUT2.setAttribute('max', maxPrice);
+    INPUT2.setAttribute('max', maxStartPrice);
 
     noUiSlider.create(priceSlider, {
         start: [minPrice, maxPrice],
         connect: true,
         step: 1,
         range: {
-            min: [+minPrice],
-            max: [+maxPrice],
+            min: [+minStartPrice],
+            max: [+maxStartPrice],
         },
 
         format: {
@@ -55,24 +66,35 @@ export function priceSlider(data: SourceData, currentState: State) {
 
 export function weightSlider(data: SourceData, currentState: State) {
     const weightSlider = document.getElementById('filter-weight') as noUiSlider.target;
-    const minWeight = getMin(data, 'weight');
-    const maxWeight = getMax(data, 'weight');
 
-    INPUT3.setAttribute('min', minWeight);
+    const minStartWeight = getMin(data, 'weight');
+    const maxStartWeight = getMax(data, 'weight');
+    let minWeight;
+    let maxWeight;
+
+    if (currentState.minWeight && currentState.maxWeight) {
+        minWeight = currentState.minWeight;
+        maxWeight = currentState.maxWeight;
+    } else {
+        minWeight = minStartWeight;
+        maxWeight = maxStartWeight;
+    }
+
+    INPUT3.setAttribute('min', minStartWeight);
     INPUT3.setAttribute('placeholder', minWeight);
-    INPUT4.setAttribute('min', minWeight);
+    INPUT4.setAttribute('min', minStartWeight);
 
-    INPUT3.setAttribute('max', maxWeight);
+    INPUT3.setAttribute('max', maxStartWeight);
     INPUT4.setAttribute('placeholder', maxWeight);
-    INPUT4.setAttribute('max', maxWeight);
+    INPUT4.setAttribute('max', maxStartWeight);
 
     noUiSlider.create(weightSlider, {
         start: [minWeight, maxWeight],
         connect: true,
         step: 10,
         range: {
-            min: [+minWeight],
-            max: [+maxWeight],
+            min: [+minStartWeight],
+            max: [+maxStartWeight],
         },
 
         format: {
