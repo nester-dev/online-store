@@ -1,5 +1,5 @@
 import { CardInfo } from '../types/types';
-import { imagePath, buttonText } from '../constants/constants';
+import { buttonText, IMAGE_PATH } from '../constants/constants';
 
 export default function createCard(data: CardInfo): HTMLDivElement {
     const card = document.createElement('div');
@@ -29,7 +29,7 @@ export default function createCard(data: CardInfo): HTMLDivElement {
         card.appendChild(cardTag);
     }
 
-    cardImage.src = `${imagePath}${data.imageName}.png`;
+    cardImage.src = `${IMAGE_PATH}${data.imageName}.png`;
     cardTitle.innerText = data.name;
     cardButton.innerText = buttonText;
     cardPrice.innerText = `${data.price} ₽`;

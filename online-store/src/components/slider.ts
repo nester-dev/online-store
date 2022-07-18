@@ -1,14 +1,14 @@
 import * as noUiSlider from 'nouislider';
-import { SourceData, State } from '../types/types';
+import { CardInfo, SliderType, SourceData, State } from '../types/types';
 import { INPUT1, INPUT2, INPUT3, INPUT4, INPUTS_PRICE, INPUTS_WEIGHT } from '../constants/constants';
 import multipleFilter from './multipleFilter';
 import render from './render';
 
-export function priceSlider(data: SourceData, currentState: State) {
+export function priceSlider(data: SourceData, currentState: State): void {
     const priceSlider = document.getElementById('filter-price') as noUiSlider.target;
 
-    const minStartPrice = getMin(data, 'price');
-    const maxStartPrice = getMax(data, 'price');
+    const minStartPrice = getMin(data, SliderType.price);
+    const maxStartPrice = getMax(data, SliderType.price);
     let minPrice;
     let maxPrice;
 
@@ -38,10 +38,10 @@ export function priceSlider(data: SourceData, currentState: State) {
         },
 
         format: {
-            to: function (value) {
+            to: function (value: number) {
                 return Math.floor(value);
             },
-            from: function (value) {
+            from: function (value: string) {
                 return parseInt(value);
             },
         },
@@ -57,7 +57,7 @@ export function priceSlider(data: SourceData, currentState: State) {
         render(filteredData, currentState);
     });
 
-    INPUTS_PRICE.forEach((input, index) => {
+    INPUTS_PRICE.forEach((input: HTMLInputElement, index: number) => {
         input.addEventListener('change', (event: Event) => {
             setRangeSlider(index, (event.currentTarget as HTMLInputElement).value, priceSlider);
         });
@@ -67,8 +67,8 @@ export function priceSlider(data: SourceData, currentState: State) {
 export function weightSlider(data: SourceData, currentState: State) {
     const weightSlider = document.getElementById('filter-weight') as noUiSlider.target;
 
-    const minStartWeight = getMin(data, 'weight');
-    const maxStartWeight = getMax(data, 'weight');
+    const minStartWeight = getMin(data, SliderType.weight);
+    const maxStartWeight = getMax(data, SliderType.weight);
     let minWeight;
     let maxWeight;
 
@@ -98,10 +98,10 @@ export function weightSlider(data: SourceData, currentState: State) {
         },
 
         format: {
-            to: function (value) {
+            to: function (value: number) {
                 return Math.floor(value);
             },
-            from: function (value) {
+            from: function (value: string) {
                 return parseInt(value);
             },
         },
@@ -117,7 +117,7 @@ export function weightSlider(data: SourceData, currentState: State) {
         render(filteredData, currentState);
     });
 
-    INPUTS_WEIGHT.forEach((input, index) => {
+    INPUTS_WEIGHT.forEach((input: HTMLInputElement, index: number) => {
         input.addEventListener('change', (event: Event) => {
             setRangeSlider(index, (event.currentTarget as HTMLInputElement).value, weightSlider);
         });
@@ -127,16 +127,16 @@ export function weightSlider(data: SourceData, currentState: State) {
 function getMin(data: SourceData, attr: string) {
     let min = Infinity;
 
-    data.items.forEach((card) => {
+    data.items.forEach((card: CardInfo) => {
         switch (attr) {
-            case 'price':
-                if (+card['price'] < min) {
+            case SliderType.price:
+                if (+card[SliderType.price] < min) {
                     min = +card.price;
                 }
                 break;
 
-            case 'weight':
-                if (+card['weight'] < min) {
+            case SliderType.weight:
+                if (+card[SliderType.weight] < min) {
                     min = +card.weight;
                 }
                 break;
@@ -146,18 +146,18 @@ function getMin(data: SourceData, attr: string) {
     return min.toString();
 }
 
-function getMax(data: SourceData, attr: string) {
+function getMax(data: SourceData, attr: string): string {
     let max = -Infinity;
 
     data.items.forEach((card) => {
         switch (attr) {
-            case 'price':
+            case SliderType.price:
                 if (+card.price > max) {
                     max = +card.price;
                 }
                 break;
 
-            case 'weight':
+            case SliderType.weight:
                 if (+card.weight > max) {
                     max = +card.weight;
                 }
@@ -168,31 +168,31 @@ function getMax(data: SourceData, attr: string) {
     return max.toString();
 }
 
-function setRangeSlider(index: number, value: string, slider: noUiSlider.target) {
+function setRangeSlider(index: number, value: string, slider: noUiSlider.target): void {
     const array = [];
     array[index] = value;
 
     slider.noUiSlider?.set(array);
 }
 
-export function priceSliderFilter(data: SourceData, currentState: State) {
+export function priceSliderFilter(data: SourceData, currentState: State): SourceData {
     const filteredData = data;
 
     if (currentState.minPrice.length && currentState.maxPrice.length) {
         filteredData.items = filteredData.items.filter(
-            (card) => +card.price >= +currentState.minPrice && +card.price <= +currentState.maxPrice
+            (card: CardInfo) => +card.price >= +currentState.minPrice && +card.price <= +currentState.maxPrice
         );
     }
 
     return filteredData;
 }
 
-export function weightSliderFilter(data: SourceData, currentState: State) {
+export function weightSliderFilter(data: SourceData, currentState: State): SourceData {
     const filteredData = data;
 
     if (currentState.minWeight.length && currentState.maxWeight.length) {
         filteredData.items = filteredData.items.filter(
-            (card) => +card.weight >= +currentState.minWeight && +card.weight <= +currentState.maxWeight
+            (card: CardInfo) => +card.weight >= +currentState.minWeight && +card.weight <= +currentState.maxWeight
         );
     }
 

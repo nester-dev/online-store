@@ -2,7 +2,7 @@ import { State } from '../types/types';
 import { INPUT1, INPUT2, INPUT3, INPUT4 } from '../constants/constants';
 import * as noUiSlider from 'nouislider';
 
-export default function filtersReset(currentState: State) {
+export default function filtersReset(currentState: State): void {
     const activeFilters = document.querySelectorAll('.filter__element_active');
     const priceSlider = document.getElementById('filter-price') as noUiSlider.target;
     const weightSlider = document.getElementById('filter-weight') as noUiSlider.target;

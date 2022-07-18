@@ -5,7 +5,7 @@ import { searchFormEvent } from './searchForm';
 import filtersEvent from './filters';
 import { priceSlider, weightSlider } from './slider';
 
-export default function init(data: SourceData, currentState: State) {
+export default function init(data: SourceData, currentState: State): void {
     const localStorageState: State = JSON.parse(localStorage.getItem('state') as string);
 
     if (localStorageState) {

@@ -1,14 +1,12 @@
 import { State } from '../types/types';
 import popup from './popup';
-import { MAX_CART_COUNT } from '../constants/constants';
+import { CART_PRICE, CART_TOTAL, MAX_CART_COUNT, ONE, ZERO } from '../constants/constants';
 
-export default function toggleCartValue(target: HTMLElement, currentState: State) {
+export default function toggleCartValue(target: HTMLElement, currentState: State): void {
     const cardButton = target.querySelector('.card__button') as HTMLDivElement;
-    const cartTotal = document.querySelector('.cart__total') as HTMLElement;
-    const cartPrice = document.querySelector('.cart__cost') as HTMLElement;
-    const price = (target.querySelector('.card__price') as HTMLElement).innerText.split(' ')[0];
+    const price = (target.querySelector('.card__price') as HTMLElement).innerText.split(' ')[ZERO];
     const cardName = target.querySelector('.card__title') as HTMLElement;
-    const currentTotalPrice = cartPrice.innerText.substring(0, cartPrice.innerText.length - 1);
+    const currentTotalPrice = CART_PRICE.innerText.substring(ZERO, CART_PRICE.innerText.length - ONE);
 
     if (!target.classList.contains('card_selected')) {
         if (currentState.cartCount < MAX_CART_COUNT) {
@@ -17,8 +15,8 @@ export default function toggleCartValue(target: HTMLElement, currentState: State
             cardButton.innerText = 'Добавлено!';
 
             const newPrice = +currentTotalPrice + +price;
-            cartPrice.innerText = `${newPrice}₽`;
-            cartTotal.innerText = (+cartTotal.innerText + 1).toString();
+            CART_PRICE.innerText = `${newPrice}₽`;
+            CART_TOTAL.innerText = (+CART_TOTAL.innerText + ONE).toString();
             currentState.cartItems.push(cardName.innerText);
             currentState.cartCount++;
             currentState.cartTotalPrice = newPrice;
@@ -32,10 +30,10 @@ export default function toggleCartValue(target: HTMLElement, currentState: State
         cardButton.innerText = 'Выбрать';
 
         const newPrice = +currentTotalPrice - +price;
-        cartPrice.innerText = `${newPrice}₽`;
-        cartTotal.innerText = (+cartTotal.innerText - 1).toString();
+        CART_PRICE.innerText = `${newPrice}₽`;
+        CART_TOTAL.innerText = (+CART_TOTAL.innerText - ONE).toString();
         const index = currentState.cartItems.indexOf(cardName.innerText);
-        currentState.cartItems.splice(index, 1);
+        currentState.cartItems.splice(index, ONE);
         currentState.cartCount--;
         currentState.cartTotalPrice = newPrice;
         localStorage.setItem('state', JSON.stringify(currentState));

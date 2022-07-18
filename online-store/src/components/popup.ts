@@ -1,23 +1,23 @@
 import { BODY, LOCKPADDINGVALUE, POPUP, POPUP_CLOSE } from '../constants/constants';
 
-export default function popup() {
+export default function popup(): void {
     POPUP.classList.add('popup-open');
     bodyLock();
 
     POPUP.addEventListener('click', popupClose);
 }
 
-function bodyLock() {
+function bodyLock(): void {
     BODY.style.paddingRight = LOCKPADDINGVALUE;
     BODY.classList.add('lock');
 }
 
-function bodyUnlock() {
+function bodyUnlock(): void {
     BODY.style.paddingRight = '0px';
     BODY.classList.remove('lock');
 }
 
-function popupClose(event: Event) {
+function popupClose(event: Event): void {
     if (event.target == POPUP_CLOSE || !(event.target as HTMLElement).closest('.popup__content')) {
         POPUP.classList.remove('popup-open');
         bodyUnlock();

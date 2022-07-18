@@ -1,6 +1,6 @@
-import { CardInfo, SourceData, State } from '../types/types';
+import { CardInfo, FilterID, SourceData, State } from '../types/types';
 import multipleFilter from './multipleFilter';
-import { data } from '../constants/constants';
+import { data, MINUS_ONE, ZERO } from '../constants/constants';
 import render from './render';
 import filtersReset from './filtersReset';
 import settingsReset from './settingsReset';
@@ -9,21 +9,21 @@ export default function filtersEvent(currentState: State): void {
     const catalogFilters = document.querySelector('.catalog__filters') as HTMLDivElement;
 
     if (currentState.type.length) {
-        for (let i = 0; i < currentState.type.length; i++) {
+        for (let i = ZERO; i < currentState.type.length; i++) {
             const target = document.querySelector(`[data-value=${currentState.type[i]}]`) as HTMLElement;
             target.classList.add('filter__element_active');
         }
     }
 
     if (currentState.composition.length) {
-        for (let i = 0; i < currentState.composition.length; i++) {
+        for (let i = ZERO; i < currentState.composition.length; i++) {
             const target = document.querySelector(`[data-value=${currentState.composition[i]}]`) as HTMLElement;
             target.classList.add('filter__element_active');
         }
     }
 
     if (currentState.spicy.length) {
-        for (let i = 0; i < currentState.spicy.length; i++) {
+        for (let i = ZERO; i < currentState.spicy.length; i++) {
             const target = document.querySelector(`[data-value=${currentState.spicy[i]}]`) as HTMLElement;
             target.classList.add('filter__element_active');
         }
@@ -63,17 +63,17 @@ export default function filtersEvent(currentState: State): void {
 function setFilterType(filterType: string, target: HTMLElement, currentState: State): void {
     const dataAttr = target.getAttribute('data-value') as string;
     switch (filterType) {
-        case 'category':
+        case FilterID.category:
             currentState.type.push(dataAttr);
             localStorage.setItem('state', JSON.stringify(currentState));
             break;
 
-        case 'cheese':
+        case FilterID.cheese:
             currentState.composition.push(target.innerText);
             localStorage.setItem('state', JSON.stringify(currentState));
             break;
 
-        case 'spicy':
+        case FilterID.spicy:
             currentState.spicy.push(dataAttr);
             localStorage.setItem('state', JSON.stringify(currentState));
             break;
@@ -83,24 +83,24 @@ function setFilterType(filterType: string, target: HTMLElement, currentState: St
 function unsetFilterType(filterType: string, target: HTMLElement, currentState: State): void {
     const dataAttr = target.getAttribute('data-value') as string;
     switch (filterType) {
-        case 'category':
+        case FilterID.category:
             currentState.type.splice(currentState.type.indexOf(dataAttr), 1);
             localStorage.setItem('state', JSON.stringify(currentState));
             break;
 
-        case 'cheese':
+        case FilterID.cheese:
             currentState.composition.splice(currentState.composition.indexOf(target.innerText), 1);
             localStorage.setItem('state', JSON.stringify(currentState));
             break;
 
-        case 'spicy':
+        case FilterID.spicy:
             currentState.spicy.splice(currentState.spicy.indexOf(dataAttr), 1);
             localStorage.setItem('state', JSON.stringify(currentState));
             break;
     }
 }
 
-export function filterByCategory(data: SourceData, currentState: State) {
+export function filterByCategory(data: SourceData, currentState: State): SourceData {
     const filteredData = data;
 
     if (currentState.type.length) {
@@ -119,13 +119,12 @@ export function filterByCheese(data: SourceData, currentState: State): SourceDat
 
             if (!card.composition) return false;
 
-            for (let i = 0; i < currentState.composition.length; i++) {
-                if (-1 === card.composition.indexOf(`сыр ${currentState.composition[i]}`)) {
+            for (let i = ZERO; i < currentState.composition.length; i++) {
+                if (MINUS_ONE === card.composition.indexOf(`сыр ${currentState.composition[i]}`)) {
                     isContains = false;
                     break;
                 }
             }
-
             return isContains;
         });
     }
@@ -140,8 +139,8 @@ export function filterBySpicy(data: SourceData, currentState: State): SourceData
         filteredData.items = filteredData.items.filter((card: CardInfo) => {
             let isContains = true;
 
-            for (let i = 0; i < currentState.spicy.length; i++) {
-                if (-1 === currentState.spicy.indexOf(card.spicy)) {
+            for (let i = ZERO; i < currentState.spicy.length; i++) {
+                if (MINUS_ONE === currentState.spicy.indexOf(card.spicy)) {
                     isContains = false;
                     break;
                 }

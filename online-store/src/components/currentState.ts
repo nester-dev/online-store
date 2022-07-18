@@ -1,5 +1,7 @@
+import { SortOrder } from '../types/types';
+
 export const currentState = {
-    sortOrder: 'nameAZ',
+    sortOrder: SortOrder.nameAZ,
     type: [],
     composition: [],
     spicy: [],

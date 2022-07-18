@@ -81,10 +81,6 @@
   &__text {
     font-weight: 600;
   }
-
-  // .bottom-header__cart
-  &__cart {
-  }
 }
 
 .cart {
@@ -102,11 +98,6 @@
   font-size: 16px;
   line-height: 22px;
   color: #FFFFFF;
-
-  // .cart__icon
-  &__icon {
-
-  }
 
   // .cart__icon
   &__wrapper {
@@ -128,10 +119,6 @@
     border-radius: 100%;
     background-color: #ef2b51;
     font-size: 11px;
-  }
-
-  // .cart__cost
-  &__cost {
   }
 }
 
@@ -163,13 +150,5 @@
     &:hover {
       background: #FFEEE2;
     }
-  }
-
-  // .menu__icon
-  &__icon {
-  }
-
-  // .menu__text
-  &__text {
   }
 }

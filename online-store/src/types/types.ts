@@ -28,3 +28,21 @@ export interface State {
     minWeight: string;
     maxWeight: string;
 }
+
+export enum SortOrder {
+    nameAZ = 'nameAZ',
+    nameZA = 'nameZA',
+    priceUp = 'priceUp',
+    priceDown = 'priceDown',
+}
+
+export enum FilterID {
+    category = 'category',
+    cheese = 'cheese',
+    spicy = 'spicy',
+}
+
+export enum SliderType {
+    price = 'price',
+    weight = 'weight',
+}

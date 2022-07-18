@@ -18,13 +18,13 @@
   &__element {
     display: block;
     margin: 5px 0 0 10px;
+    padding: 5px;
+    border-radius: 10px;
     border-top: none;
     border-right: none;
     border-left: none;
     border-image: initial;
     border-bottom: 1px solid transparent;
-    padding: 5px;
-    border-radius: 10px;
 
     // .filter__element-active
     &_active {
@@ -40,8 +40,8 @@
   padding: 10px;
   border: 1px solid #FF7010;
   border-radius: 10px;
-  background-color: #ffffff;
   text-align: center;
+  background-color: #ffffff;
 
   &:hover {
     cursor: pointer;
