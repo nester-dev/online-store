@@ -138,12 +138,15 @@
 .menu {
   display: flex;
   justify-content: space-between;
-  margin: 30px 0;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
   color: #191919;
+
+  &__container {
+    margin: 30px auto;
+  }
 
   // .menu__item
   &__item {

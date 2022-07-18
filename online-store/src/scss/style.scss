@@ -6,6 +6,19 @@
   padding: 0 195px;
 }
 
+@media (max-width: 1700px) {
+  [class*="__container"] {
+    padding: 0 100px;
+  }
+}
+
+@media (max-width: 1290px) {
+  [class*="__container"] {
+    padding: 0 20px;
+  }
+}
+
+
 .lock {
   overflow: hidden;
   touch-action: none;

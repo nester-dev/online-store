@@ -10,7 +10,7 @@
 
   // .catalog__filters
   &__filters {
-    width: 20%;
+    min-width: 216px;
     padding: 10px 10px;
     border-radius: 10px;
     background: #FFEEE2;
@@ -58,6 +58,7 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 30px 10px;
   }
 
