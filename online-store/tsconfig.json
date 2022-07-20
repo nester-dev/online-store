@@ -10,7 +10,8 @@
     "strictPropertyInitialization": true,
     "strictFunctionTypes": true,
     "noImplicitThis": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "esModuleInterop": true
   },
   "exclude": [
     "node_modules"

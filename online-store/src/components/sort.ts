@@ -1,7 +1,7 @@
 import { SortOrder, SourceData, State } from '../types/types';
 import render from './render';
 import multipleFilter from './multipleFilter';
-import { BODY, data } from '../constants/constants';
+import { BODY, DATA } from '../constants/constants';
 
 export function sort(currentState: State): void {
     const dropdownContent = document.querySelector('.dropdown__content') as HTMLDivElement;
@@ -16,7 +16,7 @@ export function sort(currentState: State): void {
             currentState.sortOrder = target.getAttribute('data-value') as string;
             dropdownContent.classList.remove('dropdown__content_show');
 
-            const filteredData = multipleFilter(data, currentState);
+            const filteredData = multipleFilter(DATA, currentState);
             localStorage.setItem('state', JSON.stringify(currentState));
             render(filteredData, currentState);
         }

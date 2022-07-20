@@ -2,7 +2,7 @@ import createCard from './createCard';
 import multipleFilter from './multipleFilter';
 import { SourceData, State } from '../types/types';
 import cardsEvent from './cardsEvent';
-import { DROPDOWNBUTTON, ZERO } from '../constants/constants';
+import { DROPDOWNBUTTON } from '../constants/constants';
 
 export default function render(data: SourceData, currentState: State): void {
     const catalogContent = document.querySelector('.catalog__content') as HTMLElement;
@@ -23,7 +23,7 @@ export default function render(data: SourceData, currentState: State): void {
         list.appendChild(noCardsText);
         catalogContent.appendChild(list);
     } else {
-        for (let i = ZERO; i < filteredData.items.length; i++) {
+        for (let i = 0; i < filteredData.items.length; i++) {
             const card = createCard(filteredData.items[i]);
             const cardName = card.querySelector('.card__title') as HTMLElement;
 

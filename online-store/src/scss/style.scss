@@ -1,4 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@400;600&display=swap');
+@import "null";
+@import "header";
+@import "search-form";
+@import "dropdown";
+@import "filter";
+@import 'nouislider/dist/nouislider.css';
+@import "price-slider";
+@import "popular";
+@import "catalog";
+@import "card";
+@import "popup";
+@import "footer";
 
 [class*="__container"] {
   max-width: 1680px;
@@ -23,15 +35,3 @@
   overflow: hidden;
   touch-action: none;
 }
-@import "null";
-@import "header";
-@import "search-form";
-@import "dropdown";
-@import "filter";
-@import 'nouislider/dist/nouislider.css';
-@import "price-slider";
-@import "popular";
-@import "catalog";
-@import "card";
-@import "popup";
-@import "footer";

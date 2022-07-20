@@ -30,7 +30,7 @@
     &_active {
       border: 1px solid #FF7010;
       background-color: #FF7010;
-      color: #fff;
+      color: #FFF;
     }
   }
 }
@@ -41,12 +41,12 @@
   border: 1px solid #FF7010;
   border-radius: 10px;
   text-align: center;
-  background-color: #ffffff;
+  background-color: #FFF;
 
   &:hover {
     cursor: pointer;
     background-color: #FF7010;
-    color: #ffffff;
+    color: #FFF;
     transition: all 0.4s ease 0s;
   }
 }

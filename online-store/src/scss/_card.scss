@@ -6,7 +6,7 @@
   padding-bottom: 20px;
   border: 1px solid #F0F0F0;
   border-radius: 12px;
-  background: #FFFFFF;
+  background: #FFF;
   transition: all 0.4s ease 0s;
 
   &:hover {
@@ -27,7 +27,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
-    color: #FFFFFF;
+    color: #FFF;
   }
 
   // .card__image
@@ -72,21 +72,21 @@
     border-radius: 6px;
     border: 1px solid #FF7010;
     background: #FF7010;
-    color: #FFFFFF;
+    color: #FFF;
 
     &:hover {
-      background: #ffffff;
+      background: #FFF;
       color: #FF7010;
     }
 
     &_active {
       padding: 13px 16px 13px 16px;;
-      background: #ffffff;
+      background: #FFF;
       color: #FF7010;
 
       &:hover {
         background: #FF7010;
-        color: #FFFFFF;
+        color: #FFF;
       }
     }
   }

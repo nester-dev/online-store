@@ -1,6 +1,6 @@
 import { CardInfo, FilterID, SourceData, State } from '../types/types';
 import multipleFilter from './multipleFilter';
-import { data, MINUS_ONE, ZERO } from '../constants/constants';
+import { DATA } from '../constants/constants';
 import render from './render';
 import filtersReset from './filtersReset';
 import settingsReset from './settingsReset';
@@ -8,26 +8,9 @@ import settingsReset from './settingsReset';
 export default function filtersEvent(currentState: State): void {
     const catalogFilters = document.querySelector('.catalog__filters') as HTMLDivElement;
 
-    if (currentState.type.length) {
-        for (let i = ZERO; i < currentState.type.length; i++) {
-            const target = document.querySelector(`[data-value=${currentState.type[i]}]`) as HTMLElement;
-            target.classList.add('filter__element_active');
-        }
-    }
-
-    if (currentState.composition.length) {
-        for (let i = ZERO; i < currentState.composition.length; i++) {
-            const target = document.querySelector(`[data-value=${currentState.composition[i]}]`) as HTMLElement;
-            target.classList.add('filter__element_active');
-        }
-    }
-
-    if (currentState.spicy.length) {
-        for (let i = ZERO; i < currentState.spicy.length; i++) {
-            const target = document.querySelector(`[data-value=${currentState.spicy[i]}]`) as HTMLElement;
-            target.classList.add('filter__element_active');
-        }
-    }
+    checkCurrentState(currentState.type);
+    checkCurrentState(currentState.composition);
+    checkCurrentState(currentState.spicy);
 
     catalogFilters.addEventListener('click', (event: Event) => {
         const target = event.target as HTMLElement;
@@ -35,10 +18,9 @@ export default function filtersEvent(currentState: State): void {
         if (target.classList.contains('filter__element')) {
             target.classList.toggle('filter__element_active');
             const filterType = (target.closest('div') as HTMLDivElement).getAttribute('id') as string;
+            const isActive = target.classList.contains('filter__element_active');
 
-            target.classList.contains('filter__element_active')
-                ? setFilterType(filterType, target, currentState)
-                : unsetFilterType(filterType, target, currentState);
+            toggleFilterType(filterType, target, currentState, isActive);
         }
 
         if (target.getAttribute('id') === 'checkbox') {
@@ -52,52 +34,43 @@ export default function filtersEvent(currentState: State): void {
 
         if (target.classList.contains('reset-settings')) {
             settingsReset(currentState);
-            render(data, currentState);
+            render(DATA, currentState);
         }
 
-        const filteredData = multipleFilter(data, currentState);
+        const filteredData = multipleFilter(DATA, currentState);
         render(filteredData, currentState);
     });
 }
 
-function setFilterType(filterType: string, target: HTMLElement, currentState: State): void {
-    const dataAttr = target.getAttribute('data-value') as string;
-    switch (filterType) {
-        case FilterID.category:
-            currentState.type.push(dataAttr);
-            localStorage.setItem('state', JSON.stringify(currentState));
-            break;
-
-        case FilterID.cheese:
-            currentState.composition.push(target.innerText);
-            localStorage.setItem('state', JSON.stringify(currentState));
-            break;
-
-        case FilterID.spicy:
-            currentState.spicy.push(dataAttr);
-            localStorage.setItem('state', JSON.stringify(currentState));
-            break;
+function checkCurrentState(element: Array<string>) {
+    for (let i = 0; i < element.length; i++) {
+        const target = document.querySelector(`[data-value=${element[i]}]`) as HTMLElement;
+        target.classList.add('filter__element_active');
     }
 }
 
-function unsetFilterType(filterType: string, target: HTMLElement, currentState: State): void {
+function toggleFilterType(filterType: string, target: HTMLElement, currentState: State, isActive: boolean): void {
     const dataAttr = target.getAttribute('data-value') as string;
     switch (filterType) {
         case FilterID.category:
-            currentState.type.splice(currentState.type.indexOf(dataAttr), 1);
-            localStorage.setItem('state', JSON.stringify(currentState));
+            isActive
+                ? currentState.type.push(dataAttr)
+                : currentState.type.splice(currentState.type.indexOf(dataAttr), 1);
             break;
 
         case FilterID.cheese:
-            currentState.composition.splice(currentState.composition.indexOf(target.innerText), 1);
-            localStorage.setItem('state', JSON.stringify(currentState));
+            isActive
+                ? currentState.composition.push(target.innerText)
+                : currentState.composition.splice(currentState.composition.indexOf(target.innerText), 1);
             break;
 
         case FilterID.spicy:
-            currentState.spicy.splice(currentState.spicy.indexOf(dataAttr), 1);
-            localStorage.setItem('state', JSON.stringify(currentState));
+            isActive
+                ? currentState.spicy.push(dataAttr)
+                : currentState.spicy.splice(currentState.spicy.indexOf(dataAttr), 1);
             break;
     }
+    localStorage.setItem('state', JSON.stringify(currentState));
 }
 
 export function filterByCategory(data: SourceData, currentState: State): SourceData {
@@ -119,8 +92,8 @@ export function filterByCheese(data: SourceData, currentState: State): SourceDat
 
             if (!card.composition) return false;
 
-            for (let i = ZERO; i < currentState.composition.length; i++) {
-                if (MINUS_ONE === card.composition.indexOf(`сыр ${currentState.composition[i]}`)) {
+            for (let i = 0; i < currentState.composition.length; i++) {
+                if (card.composition.indexOf(`сыр ${currentState.composition[i]}`) === -1) {
                     isContains = false;
                     break;
                 }
@@ -139,8 +112,8 @@ export function filterBySpicy(data: SourceData, currentState: State): SourceData
         filteredData.items = filteredData.items.filter((card: CardInfo) => {
             let isContains = true;
 
-            for (let i = ZERO; i < currentState.spicy.length; i++) {
-                if (MINUS_ONE === currentState.spicy.indexOf(card.spicy)) {
+            for (let i = 0; i < currentState.spicy.length; i++) {
+                if (currentState.spicy.indexOf(card.spicy) === -1) {
                     isContains = false;
                     break;
                 }
